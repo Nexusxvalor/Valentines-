@@ -45,11 +45,28 @@
 </script>
 
 <!-- Music Player -->
-    <div class="music-player">
-        <img src="cover.png" alt="Music Cover" class="music-cover">
-        <audio id="loveMusic" controls>
-            <source src="song.mp3" type="audio/mp3">
-        </audio>
+<div class="music-player">
+    <img src="cover.png" alt="Music Cover" class="music-cover">
+    <audio id="loveMusic" controls loop>
+        <source src="song.mp3" type="audio/mp3">
+    </audio>
+</div>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+        let audio = document.getElementById("loveMusic");
+
+        // Function to play audio on first user interaction
+        function playAudio() {
+            audio.volume = 0.2; // Set volume to 20% for soft playback
+            audio.play().catch(error => console.log("Autoplay blocked:", error));
+            document.removeEventListener("click", playAudio); // Remove listener after first click
+        }
+
+        // Ensure autoplay is triggered after user interaction
+        document.addEventListener("click", playAudio);
+    });
+</script>
 
     </div>
 </body>
