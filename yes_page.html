@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knew you would say yes!</title>
+    <link rel="stylesheet" href="./yes_style.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+        </div>
+
+        <div class="gif_container">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif">
+        </div>
+<div class="message">
+            <p>Yay! I was really hoping you'd say yes. Now, Valentine's Day just got 100x better. Can't wait to spend it with you! 💖</p>
+        </div>
+<div class="gift-container">
+    <img src="gift.gif" alt="Gift" id="gift">
+    <div id="gift-message" class="hidden">
+        💖 Is it official now? :3 💖  
+        <br>
+        <img src="gift2.gif" alt="Surprise GIF" class="tiny-gif">
+    </div>
+</div>
+<script>
+    document.getElementById("gift").addEventListener("click", function() {
+        let message = document.getElementById("gift-message");
+
+        if (!message.classList.contains("show")) {
+            message.classList.remove("hide");
+            message.classList.add("show");
+        } else {
+            message.classList.remove("show");
+            message.classList.add("hide");
+            
+            // Remove the hide class after animation ends to reset
+            setTimeout(() => {
+                message.classList.remove("hide");
+            }, 400); 
+        }
+    });
+</script>
+
+<!-- Music Player -->
+    <div class="music-player">
+        <img src="cover.png" alt="Music Cover" class="music-cover">
+        <audio id="loveMusic" controls>
+            <source src="song.mp3" type="audio/mp3">
+        </audio>
+
+    </div>
+</body>
+</html>
